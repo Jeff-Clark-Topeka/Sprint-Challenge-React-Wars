@@ -1,7 +1,8 @@
 // Write your Character component here
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CharacterCard from './CharacterCard'
+import CharacterCard from './CharacterCard';
+import { Container, Row, Col } from 'reactstrap';
 
 const Character = () => {
 
@@ -19,11 +20,15 @@ const Character = () => {
     }, []);
 
     return (
-        <div>
-            {character.map((character, index) => (
-                <CharacterCard key={index} character={character}/>
-            ))}
-        </div>
+        <Container>
+            <Row>
+                <Col>
+                    {character.map((character, index) => (
+                        <CharacterCard key={index} character={character}/>
+                    ))}
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

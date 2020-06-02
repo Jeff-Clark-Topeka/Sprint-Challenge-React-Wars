@@ -1,4 +1,5 @@
 import React from 'react'
+import { Card, CardHeader, CardBody, CardTitle, CardText} from 'reactstrap'
 
 const CharacterCard = props => {
 
@@ -6,13 +7,17 @@ const CharacterCard = props => {
     const { character } = props;
 
     return (
-        <div>
-            <h3>{character.name}</h3>
-            <p>{character.height}</p>
-            <p>{character.mass}</p>
-            <p>{character.hair_color}</p>
-            <p>{character.skin_color}</p>
-        </div>
+        <Card>
+            <CardHeader>
+                <CardTitle>{character.name}</CardTitle>
+            </CardHeader>
+            <CardBody>
+                <CardText>Height: {character.height}</CardText>
+                <CardText>Weight: {character.mass}</CardText>
+                <CardText>Hair-Color: {character.hair_color}</CardText>
+                <CardText>Skin-Color: {character.skin_color}</CardText>
+            </CardBody>
+        </Card>
     )
 }
 
